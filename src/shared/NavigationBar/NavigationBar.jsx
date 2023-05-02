@@ -1,108 +1,72 @@
-import React, { useRef, useState } from "react";
-import "./NavigationBar.css";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import img_1 from "../../assets/slider/one.jpg";
-import img_2 from "../../assets/slider/two.jpg";
-import img_4 from "../../assets/slider/four.jpg";
-import img_5 from "../../assets/slider/five.jpg";
-import img_6 from "../../assets/slider/six.jpg";
-import img_7 from "../../assets/slider/seven.jpg";
-import img_8 from "../../assets/slider/eight.jpg";
-import { Navigation } from "swiper";
+
+import { FaUserCircle} from "react-icons/fa";
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Lato&family=Vina+Sans&display=swap" rel="stylesheet"></link>
+import logo from "../../assets/slider/logo.svg";
+import { Link } from "react-router-dom";
 const NavigationBar = () => {
   return (
-    <div>
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-      <SwiperSlide>
-          <div className="swiper-image-container relative">
-            <img className="h-5/6" src={img_2} alt="" />
-            <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
-            <div className="text-overlay absolute top-0 left-0 lg:top-[20%] lg:left-[20%] p-5 text-white">
-              <div>
-                <h2>Image 1</h2>
-                <p>Some description about the image goes here...</p>
-              </div>
+    <div className="">
+      <div className=" ">
+        <div className="navbar h-24">
+          <div className="navbar-start">
+            <div className="dropdown">
+              <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a>Home</a>
+                </li>
+                <li>
+                  <a>About</a>
+                </li>
+                <li>
+                  <a>Blog</a>
+                </li>
+              </ul>
             </div>
+
+            <Link to="/" className="btn btn-ghost normal-case text-xl">
+              <img className="w-14" src={logo} alt="" />CHEF MASTER
+            </Link>
           </div>
-        </SwiperSlide>
-      <SwiperSlide>
-          <div className="swiper-image-container relative">
-            <img className="h-5/6" src={img_4} alt="" />
-            <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
-            <div className="text-overlay absolute top-0 left-0 lg:top-[20%] lg:left-[20%] p-5 text-white">
-              <div>
-                <h2>Image 1</h2>
-                <p>Some description about the image goes here...</p>
-              </div>
-            </div>
+          <div className="navbar-center hidden lg:flex">
+            <ul className="menu menu-horizontal px-1">
+              <li className="font-semibold hover:text-blue-800">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="font-semibold hover:text-blue-800">
+                <Link to="/about">About</Link>
+              </li>
+              <li className="font-semibold hover:text-blue-800">
+                <a>Blog</a>
+              </li>
+              
+             
+            </ul>
           </div>
-        </SwiperSlide>
-      <SwiperSlide>
-          <div className="swiper-image-container relative">
-            <img className="h-5/6" src={img_1} alt="" />
-            <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
-            <div className="text-overlay absolute top-0 left-0 lg:top-[20%] lg:left-[20%] p-5 text-white">
-              <div>
-                <h2>Image 1</h2>
-                <p>Some description about the image goes here...</p>
-              </div>
-            </div>
+          <div className="navbar-end pr-5">
+            <FaUserCircle className="text-3xl "></FaUserCircle>
           </div>
-        </SwiperSlide>
-      <SwiperSlide>
-          <div className="swiper-image-container relative">
-            <img className="h-5/6" src={img_5} alt="" />
-            <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
-            <div className="text-overlay absolute top-0 left-0 lg:top-[20%] lg:left-[20%] p-5 text-white">
-              <div>
-                <h2>Image 1</h2>
-                <p>Some description about the image goes here...</p>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-      <SwiperSlide>
-          <div className="swiper-image-container relative">
-            <img className="h-5/6" src={img_6} alt="" />
-            <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
-            <div className="text-overlay absolute top-0 left-0 lg:top-[20%] lg:left-[20%] p-5 text-white">
-              <div>
-                <h2>Image 1</h2>
-                <p>Some description about the image goes here...</p>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-      <SwiperSlide>
-          <div className="swiper-image-container relative">
-            <img className="h-5/6" src={img_7} alt="" />
-            <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
-            <div className="text-overlay absolute top-0 left-0 lg:top-[20%] lg:left-[20%] p-5 text-white">
-              <div>
-                <h2>Image 1</h2>
-                <p>Some description about the image goes here...</p>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-      <SwiperSlide>
-          <div className="swiper-image-container relative">
-            <img className="h-5/6" src={img_8} alt="" />
-            <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
-            <div className="text-overlay absolute top-0 left-0 lg:top-[20%] lg:left-[20%] p-5 text-white">
-              <div>
-                <h2>Image 1</h2>
-                <p>Some description about the image goes here...</p>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
+        </div>
+      </div>
       
-      </Swiper>
     </div>
   );
 };

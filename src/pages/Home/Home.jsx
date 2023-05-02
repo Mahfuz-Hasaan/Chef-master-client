@@ -1,9 +1,10 @@
 import React from 'react';
+import CoverImg from './CoverImg/CoverImg';
 
 const Home = () => {
     return (
         <div>
-            <p>This is home</p>
+            <CoverImg></CoverImg>
         </div>
     );
 };
