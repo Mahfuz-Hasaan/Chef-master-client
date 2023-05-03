@@ -1,6 +1,8 @@
-
-import { FaUserCircle} from "react-icons/fa";
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Lato&family=Vina+Sans&display=swap" rel="stylesheet"></link>
+import { FaUserCircle } from "react-icons/fa";
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Lato&family=Vina+Sans&display=swap"
+  rel="stylesheet"
+></link>;
 import logo from "../../assets/slider/logo.svg";
 import { Link } from "react-router-dom";
 const NavigationBar = () => {
@@ -43,7 +45,8 @@ const NavigationBar = () => {
             </div>
 
             <Link to="/" className="btn btn-ghost normal-case text-xl">
-              <img className="w-14" src={logo} alt="" />CHEF MASTER
+              <img className="w-14" src={logo} alt="" />
+              CHEF MASTER
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -57,8 +60,6 @@ const NavigationBar = () => {
               <li className="font-semibold hover:text-blue-800">
                 <a>Blog</a>
               </li>
-              
-             
             </ul>
           </div>
           <div className="navbar-end pr-5">
@@ -66,7 +67,6 @@ const NavigationBar = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };
