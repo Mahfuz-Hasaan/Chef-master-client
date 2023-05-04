@@ -4,8 +4,19 @@ import { FaUserCircle } from "react-icons/fa";
   rel="stylesheet"
 ></link>;
 import logo from "../../assets/slider/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 const NavigationBar = () => {
+
+  const {user,logOut} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogout =  () =>{
+    logOut()
+    .then()
+    navigate('/')
+    .catch(error => console.log(error));
+  }
   return (
     <div className="">
       <div className=" ">
@@ -33,13 +44,10 @@ const NavigationBar = () => {
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <a>Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a>About</a>
-                </li>
-                <li>
-                  <a>Blog</a>
+                  <Link to="/blog">Blog</Link>
                 </li>
               </ul>
             </div>
@@ -55,18 +63,21 @@ const NavigationBar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li className="font-semibold hover:text-blue-800">
-                <Link to="/about">About</Link>
-              </li>
-              <li className="font-semibold hover:text-blue-800">
-                <a>Blog</a>
+                <Link to="/blog">Blog</Link>
               </li>
             </ul>
           </div>
-          <div className="navbar-end pr-5">
-            <FaUserCircle className="text-3xl "></FaUserCircle>
+          {
+            user ? <div className="navbar-end pr-5 font-semibold"><button onClick={handleLogout}>Logout</button>
+            <p></p>
+            </div> :
+            <div className="navbar-end pr-5">
+            <Link className="font-semibold" to="/login">Login</Link>
+           
           </div>
+          }
         </div>
-      </div>
+      </div>  
     </div>
   );
 };

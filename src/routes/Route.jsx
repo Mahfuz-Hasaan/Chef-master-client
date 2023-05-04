@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
-import About from "../pages/About/About";
 import Home from "../pages/Home/Home/Home";
 import ChefDetails from "../pages/ChefDetails/ChefDetails";
-import ErroLayout from "../layouts/ErroLayout";
 import ErrorPAge from "../pages/ErrorPage/ErrorPAge";
+import Blog from "../pages/Blog/Blog";
+import Login from "../shared/Login/Login";
+import Registration from "../shared/Login/Registration/Registration";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -16,12 +18,20 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "about",
-        element: <About></About>,
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/registration",
+        element: <Registration></Registration>,
       },
       {
         path: ":id",
-        element: <ChefDetails></ChefDetails>,
+        element: <PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
         loader: ({ params }) =>
           fetch(
             `https://master-chef-server-mahfuzhasan584-gmailcom.vercel.app/chef/${params.id}`
