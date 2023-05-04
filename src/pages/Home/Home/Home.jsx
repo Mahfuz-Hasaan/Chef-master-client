@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-import { FaRegHeart, FaRegStar } from "react-icons/fa";
-import { EffectCoverflow, Pagination } from "swiper";
+import { FaRegHeart, FaRegStar, FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CoverImg from "../CoverImg/CoverImg";
+
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 
 const Home = () => {
   const [chefs, setChefs] = useState([]);
@@ -25,11 +27,25 @@ const Home = () => {
               </figure>
               <div className="card-body">
                 <h2 className="card-title text-2xl font-bold">{chef.name}</h2>
-                <p>Experience : {chef.years_of_exp}</p>
-                <p>Total Recipe : {chef.num_of_recipes}</p>
-                <div className="flex items-center justify-between">
-                  <FaRegHeart className="text-pink-600"></FaRegHeart>
-                  <FaRegStar></FaRegStar>
+                <p className="font-bold">Experience : {chef.years_of_exp}</p>
+                <p className="font-bold">
+                  Total Recipe : {chef.num_of_recipes}
+                </p>
+                <div className="flex justify-between py-5">
+                  <div className="flex gap-3 items-center">
+                    <Rating
+                      style={{ maxWidth: 85 }}
+                      value={chef.ratings}
+                      readOnly
+                    />
+                    <p className="font-semibold text-green-900">
+                      {chef.ratings}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaHeart className="text-pink-600 cursor-pointer"></FaHeart>
+                    <p className="font-semibold text-green-900">{chef.likes}</p>
+                  </div>
                 </div>
                 <div className="card-actions justify-end">
                   <Link to={`/${chef.id}`}>
