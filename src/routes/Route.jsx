@@ -23,11 +23,13 @@ const router = createBrowserRouter([
         path: ":id",
         element: <ChefDetails></ChefDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/chef/${params.id}`),
+          fetch(
+            `https://master-chef-server-mahfuzhasan584-gmailcom.vercel.app/chef/${params.id}`
+          ),
       },
       {
         path: "*",
-        element: <ErrorPAge></ErrorPAge>
+        element: <ErrorPAge></ErrorPAge>,
       },
     ],
   },
