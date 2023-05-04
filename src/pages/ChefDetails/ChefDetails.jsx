@@ -16,6 +16,9 @@ import { useLoaderData } from "react-router-dom";
 import { FaRegHeart, FaRegStar, FaHeart } from "react-icons/fa";
 
 const ChefDetails = () => {
+  const [liked,setLiked] = useState(true);
+  const [secondLiked,setSecondLiked] = useState(true);
+  const [thirdLiked,setThirdLiked] = useState(true);
   const chefDetailsInfo = useLoaderData();
   const {
     name,
@@ -31,7 +34,7 @@ const ChefDetails = () => {
     cooking_method,
   } = chefDetailsInfo;
 
-  const handleLike = () => {
+  const handleLikeRecipeOne = () => {
     toast("you have liked the recipe!!", {
       position: "top-right",
       autoClose: 5000,
@@ -42,6 +45,33 @@ const ChefDetails = () => {
       progress: undefined,
       theme: "light",
     });
+    setLiked(false);
+  };
+  const handleLikeRecipeTwo = () => {
+    toast("you have liked the recipe!!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    setSecondLiked(false);
+  };
+  const handleLikeRecipeThree = () => {
+    toast("you have liked the recipe!!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    setThirdLiked(false);
   };
 
   return (
@@ -152,10 +182,18 @@ const ChefDetails = () => {
                             </p>
                           </div>
                           <div className="flex items-center gap-2">
-                            <FaRegHeart
-                              onClick={handleLike}
+                            {
+                              liked ? <>
+                                <FaRegHeart
+                              onClick={handleLikeRecipeOne}
                               className="text-pink-600 cursor-pointer"
                             ></FaRegHeart>
+                              </>
+                              :
+                              <>
+                                <FaHeart className="text-zinc-400"></FaHeart>
+                              </>
+                            }
                           </div>
                         </div>
                       </SwiperSlide>
@@ -193,10 +231,18 @@ const ChefDetails = () => {
                             </p>
                           </div>
                           <div className="flex items-center gap-2">
-                            <FaRegHeart
-                              onClick={handleLike}
+                          {
+                              secondLiked ? <>
+                                <FaRegHeart
+                              onClick={handleLikeRecipeTwo}
                               className="text-pink-600 cursor-pointer"
                             ></FaRegHeart>
+                              </>
+                              :
+                              <>
+                                <FaHeart className="text-zinc-400"></FaHeart>
+                              </>
+                            }
                           </div>
                         </div>
                       </SwiperSlide>
@@ -234,10 +280,18 @@ const ChefDetails = () => {
                             </p>
                           </div>
                           <div className="flex items-center gap-2">
-                            <FaRegHeart
-                              onClick={handleLike}
+                           {
+                              thirdLiked ? <>
+                                <FaRegHeart
+                              onClick={handleLikeRecipeThree}
                               className="text-pink-600 cursor-pointer"
                             ></FaRegHeart>
+                              </>
+                              :
+                              <>
+                                <FaHeart className="text-zinc-400"></FaHeart>
+                              </>
+                            }
                           </div>
                         </div>
                       </SwiperSlide>
