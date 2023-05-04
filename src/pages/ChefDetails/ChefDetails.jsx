@@ -6,6 +6,9 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper";
 import "./ChefDetails.css";
 
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
@@ -27,29 +30,44 @@ const ChefDetails = () => {
     ingredients,
     cooking_method,
   } = chefDetailsInfo;
+
+  const handleLike = () => {
+    toast("you have liked the recipe!!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+
   return (
     <div>
-      <div class=" flex items-center justify-center">
-        <div class="container max-w-4xl bg-white rounded dark:bg-gray-800 shadow-lg transform duration-200 easy-in-out m-12">
-          <div class="h-1/4 sm:h-96 overflow-hidden">
+      
+      <div className=" flex items-center justify-center">
+        <div className="container max-w-4xl bg-white rounded dark:bg-gray-800 shadow-lg transform duration-200 easy-in-out m-12">
+          <div className="h-1/4 sm:h-96 overflow-hidden">
             <img
-              class="w-full rounded-t"
+              className="w-full rounded-t"
               src={chef_img}
               alt="Photo by aldi sigun on Unsplash"
             />
           </div>
-          <div class="flex justify-start px-5 -mt-12 mb-5">
+          <div className="flex justify-start px-5 -mt-12 mb-5">
             <span clspanss="block relative h-48 w-48">
               <img
                 alt={name}
                 src={chef_img}
-                class="mx-auto object-cover rounded-full h-24 w-24 bg-white p-1"
+                className="mx-auto object-cover rounded-full h-24 w-24 bg-white p-1"
               />
             </span>
           </div>
-          <div class="">
-            <div class="px-7 mb-8">
-              <h2 class="text-3xl font-bold text-green-900 dark:text-gray-300">
+          <div className="">
+            <div className="px-7 mb-8">
+              <h2 className="text-3xl font-bold text-green-900 dark:text-gray-300">
                 {name}
               </h2>
               <div className="py-2 text-green-800 font-semibold">
@@ -57,7 +75,7 @@ const ChefDetails = () => {
                 <p>Number of Recipes : {num_of_recipes}</p>
               </div>
 
-              <p class="mt-2 text-gray-600 dark:text-gray-300">{bio}</p>
+              <p className="mt-2 text-gray-600 dark:text-gray-300">{bio}</p>
 
               <div className="flex justify-between py-5">
                 <div className="flex gap-3 items-center">
@@ -134,7 +152,10 @@ const ChefDetails = () => {
                             </p>
                           </div>
                           <div className="flex items-center gap-2">
-                            <FaRegHeart className="text-pink-600 cursor-pointer"></FaRegHeart>
+                            <FaRegHeart
+                              onClick={handleLike}
+                              className="text-pink-600 cursor-pointer"
+                            ></FaRegHeart>
                           </div>
                         </div>
                       </SwiperSlide>
@@ -172,7 +193,10 @@ const ChefDetails = () => {
                             </p>
                           </div>
                           <div className="flex items-center gap-2">
-                            <FaRegHeart className="text-pink-600 cursor-pointer"></FaRegHeart>
+                            <FaRegHeart
+                              onClick={handleLike}
+                              className="text-pink-600 cursor-pointer"
+                            ></FaRegHeart>
                           </div>
                         </div>
                       </SwiperSlide>
@@ -210,7 +234,10 @@ const ChefDetails = () => {
                             </p>
                           </div>
                           <div className="flex items-center gap-2">
-                            <FaRegHeart className="text-pink-600 cursor-pointer"></FaRegHeart>
+                            <FaRegHeart
+                              onClick={handleLike}
+                              className="text-pink-600 cursor-pointer"
+                            ></FaRegHeart>
                           </div>
                         </div>
                       </SwiperSlide>
@@ -230,6 +257,7 @@ const ChefDetails = () => {
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
