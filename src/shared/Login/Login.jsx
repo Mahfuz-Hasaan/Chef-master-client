@@ -8,12 +8,13 @@ import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from
 import app from "../../firebase/firebase.config";
 
 const Login = () => {
+  const [error, setError] = useState("");
+
   const auth = getAuth(app); 
   const provider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
   const { signIn } = useContext(AuthContext);
-  const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from.pathname || "/";
@@ -45,7 +46,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
-        setError("Invalid email or password ");
+        setError(error.message);
       });
   };
 

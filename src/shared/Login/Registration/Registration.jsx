@@ -46,7 +46,7 @@ const Registration = () => {
         form.reset();
       })
       .catch((error) => {
-        setError("password should be at least six characters");
+        setError(error.message);
       });
   };
 
