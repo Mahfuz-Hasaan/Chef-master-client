@@ -7,9 +7,10 @@ import "react-toastify/dist/ReactToastify.css";
 ></link>;
 import logo from "../../assets/slider/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 const NavigationBar = () => {
+  const [userName, setUserName] = useState("");
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -28,6 +29,13 @@ const NavigationBar = () => {
       })
       .catch((error) => console.log(error));
   };
+
+  useEffect(() => {
+    if (user) {
+      setUserName(user.displayName);
+    }
+  }, [user]);
+
   return (
     <div className="">
       <div className=" ">
@@ -80,13 +88,25 @@ const NavigationBar = () => {
           </div>
           {user ? (
             <div className="navbar-end lg:pr-5 pl-20 font-semibold flex lg:flex-row flex-col lg:gap-4 gap-2">
-              <img className="w-12 rounded-3xl" src={user.photoURL}alt="" />
-              <button className="border-2 rounded-md p-2 bg-amber-50" onClick={handleLogout}>Logout</button>         
+              <img
+                className="w-12 rounded-3xl cursor-pointer"
+                src={user.photoURL}
+                alt=""
+                title= {userName}
+              />
+              <button
+                className="border-2 rounded-md p-2 bg-amber-50"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
             </div>
           ) : (
             <div className="navbar-end pr-5">
               <Link className="font-semibold" to="/login">
-                <button className="border-2 rounded-md p-2 bg-amber-50">Login</button>
+                <button className="border-2 rounded-md p-2 bg-amber-50">
+                  Login
+                </button>
               </Link>
             </div>
           )}
