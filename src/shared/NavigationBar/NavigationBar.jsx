@@ -9,6 +9,7 @@ import logo from "../../assets/slider/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import ActiveLink from "../ActiveLink/ActiveLink";
 const NavigationBar = () => {
   const [userName, setUserName] = useState("");
   const { user, logOut } = useContext(AuthContext);
@@ -76,15 +77,10 @@ const NavigationBar = () => {
               CHEF MASTER
             </Link>
           </div>
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
-              <li className="font-semibold hover:text-blue-800">
-                <Link to="/">Home</Link>
-              </li>
-              <li className="font-semibold hover:text-blue-800">
-                <Link to="/blog">Blog</Link>
-              </li>
-            </ul>
+          <div className="navbar-center hidden lg:flex gap-8">
+            <p className="font-bold cursor-pointer"><ActiveLink to="/">Home</ActiveLink></p>
+            <p className="font-bold cursor-pointer"><ActiveLink to="/about">About</ActiveLink></p>
+            <p className="font-bold cursor-pointer"><ActiveLink to="blog">Blog</ActiveLink></p>
           </div>
           {user ? (
             <div className="navbar-end lg:pr-5 pl-20 font-semibold flex lg:flex-row flex-col lg:gap-4 gap-2">
@@ -92,10 +88,10 @@ const NavigationBar = () => {
                 className="w-12 rounded-3xl cursor-pointer"
                 src={user.photoURL}
                 alt=""
-                title= {userName}
+                title={userName}
               />
               <button
-                className="border-2 rounded-md p-2 bg-amber-50"
+                className="border-2 rounded-md p-2 bg-yellow-300"
                 onClick={handleLogout}
               >
                 Logout
@@ -104,7 +100,7 @@ const NavigationBar = () => {
           ) : (
             <div className="navbar-end pr-5">
               <Link className="font-semibold" to="/login">
-                <button className="border-2 rounded-md p-2 bg-amber-50">
+                <button className="border-2 rounded-lg p-2 bg-yellow-300">
                   Login
                 </button>
               </Link>
