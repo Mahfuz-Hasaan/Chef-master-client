@@ -78,9 +78,9 @@ const NavigationBar = () => {
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex gap-8">
-            <p className="font-bold cursor-pointer"><ActiveLink to="/">Home</ActiveLink></p>
-            <p className="font-bold cursor-pointer"><ActiveLink to="/about">About</ActiveLink></p>
-            <p className="font-bold cursor-pointer"><ActiveLink to="blog">Blog</ActiveLink></p>
+            <div className="font-bold cursor-pointer"><ActiveLink to="/">Home</ActiveLink></div>
+            <div className="font-bold cursor-pointer"><ActiveLink to="/about">About</ActiveLink></div>
+            <div className="font-bold cursor-divointer"><ActiveLink to="blog">Blog</ActiveLink></div>
           </div>
           {user ? (
             <div className="navbar-end lg:pr-5 pl-20 font-semibold flex lg:flex-row flex-col lg:gap-4 gap-2">
