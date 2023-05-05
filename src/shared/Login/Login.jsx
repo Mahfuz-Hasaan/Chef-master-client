@@ -4,12 +4,13 @@ import { AuthContext } from "../../providers/AuthProviders";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaBeer, FaGithub, FaGoogle } from "react-icons/fa";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 
 const Login = () => {
   const auth = getAuth(app); 
   const provider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
 
   const { signIn } = useContext(AuthContext);
   const [error, setError] = useState("");
@@ -58,6 +59,15 @@ const Login = () => {
     .catch(error =>{
       console.log(error.message);
     })
+  }
+
+  const handleGithubSignIn = () => {
+    signInWithPopup(auth,githubProvider)
+    .then(result => {
+      const loggedUser = result.user;
+      navigate(from, { replace: true })
+    })
+    .catch(error => {})
   }
 
   return (
@@ -119,7 +129,7 @@ const Login = () => {
             <FaGoogle></FaGoogle>
             <p className="font-bold">Login With Google</p>
           </div>
-          <div className="flex items-center gap-2 text-lg border-2 drop-shadow-lg bg-white justify-center cursor-pointer rounded-md mt-2 px-9 hover:text-slate-600">
+          <div className="flex items-center gap-2 text-lg border-2 drop-shadow-lg bg-white justify-center cursor-pointer rounded-md mt-2 px-9 hover:text-slate-600" onClick={handleGithubSignIn}>
             <FaGithub></FaGithub>
             <p className="font-bold">Login With Github</p>
           </div>
