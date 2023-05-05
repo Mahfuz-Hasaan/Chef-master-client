@@ -13,8 +13,19 @@ const NavigationBar = () => {
   const navigate = useNavigate();
   const handleLogout =  () =>{
     logOut()
-    .then()
-    .catch(error => console.log(error));
+      .then(() => {
+        toast.success('Successfully signed out', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
+      })
+      .catch((error) => console.log(error));
   }
   return (
     <div className="">

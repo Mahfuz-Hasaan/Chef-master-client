@@ -3,7 +3,7 @@ import NavigationBar from '../NavigationBar/NavigationBar';
 
 const Header = () => {
     return (
-        <div>
+        <div className=''>
             <NavigationBar></NavigationBar>
         </div>
     );
