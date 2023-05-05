@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import './CoverImg.css'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import img_2 from "../../../assets/slider/two.jpg";
 import img_4 from "../../../assets/slider/four.jpg";
@@ -18,7 +19,7 @@ const CoverImg = () => {
       <Carousel>
         <div>
           <div>
-            <img className="h-5/6" src={img_2} alt="" />
+            <LazyLoadImage className="h-5/6" src={img_2} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur" />
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
             <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
               <div className="">
@@ -35,7 +36,7 @@ const CoverImg = () => {
         </div>
         <div>
           <div>
-            <img className="h-5/6" src={img_4} alt="" />
+            <LazyLoadImage className="h-5/6" src={img_4} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur"/>
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
             <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
               <div className="">
@@ -52,7 +53,7 @@ const CoverImg = () => {
         </div>
         <div>
           <div>
-            <img className="h-5/6" src={img_5} alt="" />
+            <LazyLoadImage className="h-5/6" src={img_5} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur"/>
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
             <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
               <div className="">
@@ -69,7 +70,7 @@ const CoverImg = () => {
         </div>
         <div>
           <div>
-            <img className="h-5/6" src={img_6} alt="" />
+            <LazyLoadImage className="h-5/6" src={img_6} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur"/>
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
             <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
               <div className="">
@@ -86,7 +87,7 @@ const CoverImg = () => {
         </div>
         <div>
           <div>
-            <img className="h-5/6" src={img_7} alt="" />
+            <LazyLoadImage className="h-5/6" src={img_7} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur"/>
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
             <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
               <div className="">
@@ -103,7 +104,7 @@ const CoverImg = () => {
         </div>
         <div>
           <div>
-            <img className="h-5/6" src={img_8} alt="" />
+            <LazyLoadImage className="h-5/6" src={img_8} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur"/>
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
             <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
               <div className="">
@@ -120,7 +121,7 @@ const CoverImg = () => {
         </div>
         <div>
           <div>
-            <img className="h-5/6" src={img_1} alt="" />
+            <LazyLoadImage className="h-5/6" src={img_1} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur"/>
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
             <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
               <div className="">
