@@ -86,7 +86,7 @@ const NavigationBar = () => {
           ) : (
             <div className="navbar-end pr-5">
               <Link className="font-semibold" to="/login">
-                Login
+                <button className="border-2 rounded-md p-2 bg-amber-50">Login</button>
               </Link>
             </div>
           )}

@@ -4,8 +4,13 @@ import { AuthContext } from "../../providers/AuthProviders";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaBeer, FaGithub, FaGoogle } from "react-icons/fa";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.config";
 
 const Login = () => {
+  const auth = getAuth(app); 
+  const provider = new GoogleAuthProvider();
+
   const { signIn } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -42,6 +47,18 @@ const Login = () => {
         setError("Invalid email or password ");
       });
   };
+
+
+  const handleGoogleSignIn = () =>{
+    signInWithPopup(auth,provider)
+    .then(result  => {
+      const user = result.user;
+      navigate(from, { replace: true })
+    })
+    .catch(error =>{
+      console.log(error.message);
+    })
+  }
 
   return (
     <div>
@@ -95,12 +112,14 @@ const Login = () => {
         </div>
 
         <ToastContainer></ToastContainer>
+
+
         <div className="w-3/12 mx-auto py-10">
-          <div className="flex items-center gap-2 text-lg border-2 justify-center cursor-pointer rounded-md hover:text-blue-700 px-9">
+          <div className="flex items-center gap-2 text-lg border-2 justify-center cursor-pointer drop-shadow-lg bg-white rounded-md hover:text-blue-700 px-9" onClick={handleGoogleSignIn}>
             <FaGoogle></FaGoogle>
             <p className="font-bold">Login With Google</p>
           </div>
-          <div className="flex items-center gap-2 text-lg border-2 justify-center cursor-pointer rounded-md mt-2 px-9 hover:text-slate-950 text-slate-600">
+          <div className="flex items-center gap-2 text-lg border-2 drop-shadow-lg bg-white justify-center cursor-pointer rounded-md mt-2 px-9 hover:text-slate-600">
             <FaGithub></FaGithub>
             <p className="font-bold">Login With Github</p>
           </div>
