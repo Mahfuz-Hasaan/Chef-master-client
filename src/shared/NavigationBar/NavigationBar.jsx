@@ -79,7 +79,7 @@ const NavigationBar = () => {
           </div>
           <div className="navbar-center hidden lg:flex gap-8">
             <div className="font-bold cursor-pointer"><ActiveLink to="/">Home</ActiveLink></div>
-            <div className="font-bold cursor-pointer"><ActiveLink to="/about">About</ActiveLink></div>
+            
             <div className="font-bold cursor-divointer"><ActiveLink to="blog">Blog</ActiveLink></div>
           </div>
           {user ? (
@@ -91,7 +91,7 @@ const NavigationBar = () => {
                 title={userName}
               />
               <button
-                className="border-2 rounded-md p-2 bg-yellow-300"
+                className="border-2 rounded-md p-2 bg-green-300"
                 onClick={handleLogout}
               >
                 Logout
@@ -100,7 +100,7 @@ const NavigationBar = () => {
           ) : (
             <div className="navbar-end pr-5">
               <Link className="font-semibold" to="/login">
-                <button className="border-2 rounded-lg p-2 bg-yellow-300">
+                <button className="border-2 rounded-lg p-2 bg-green-300">
                   Login
                 </button>
               </Link>

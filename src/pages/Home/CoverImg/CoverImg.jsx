@@ -21,14 +21,16 @@ const CoverImg = () => {
           <div>
             <LazyLoadImage className="h-5/6" src={img_2} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur" />
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
-            <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
+            <div className="text-overlay absolute left-[-10%] top-[10%] lg:top-[40%] lg:left-[20%] p-5 text-white">
               <div className="">
-                <p className="text-2xl lg:text-6xl font-semibold">
+                <p className="text-2xl lg:text-6xl pl-10 lg:pl-0 font-semibold">
                   Welcome to Master Chef
                 </p>
-                <p className="pl-20 py-5 text-2xl">
+                <p className="pl-20 py-5 lg:text-2xl lg:pr-0 pr-5">
                   Choose healthy. Be strong. Live long.We are providing the best
-                  AMERICAN FOOD
+                  AMERICAN FOOD.
+                  <br />
+                  Here we are going to show you top 9 Chef in America and their top American dishes!!
                 </p>
               </div>
             </div>
@@ -38,14 +40,16 @@ const CoverImg = () => {
           <div>
             <LazyLoadImage className="h-5/6" src={img_4} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur"/>
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
-            <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
+            <div className="text-overlay absolute left-[-10%] top-[10%] lg:top-[40%] lg:left-[20%] p-5 text-white">
               <div className="">
-                <p className="text-2xl lg:text-6xl font-semibold">
+                <p className="text-2xl lg:text-6xl pl-10 lg:pl-0 font-semibold">
                   Welcome to Master Chef
                 </p>
-                <p className="pl-20 py-5 text-2xl">
+                <p className="pl-20 py-5 lg:text-2xl lg:pr-0 pr-5">
                   Choose healthy. Be strong. Live long.We are providing the best
-                  AMERICAN FOOD
+                  AMERICAN FOOD.
+                  <br />
+                  Here we are going to show you top 9 Chef in America and their top American dishes!!
                 </p>
               </div>
             </div>
@@ -55,14 +59,16 @@ const CoverImg = () => {
           <div>
             <LazyLoadImage className="h-5/6" src={img_5} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur"/>
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
-            <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
+            <div className="text-overlay absolute left-[-10%] top-[10%] lg:top-[40%] lg:left-[20%] p-5 text-white">
               <div className="">
-                <p className="text-2xl lg:text-6xl font-semibold">
+                <p className="text-2xl lg:text-6xl pl-10 lg:pl-0 font-semibold">
                   Welcome to Master Chef
                 </p>
-                <p className="pl-20 py-5 text-2xl">
+                <p className="pl-20 py-5 lg:text-2xl lg:pr-0 pr-5">
                   Choose healthy. Be strong. Live long.We are providing the best
-                  AMERICAN FOOD
+                  AMERICAN FOOD.
+                  <br />
+                  Here we are going to show you top 9 Chef in America and their top American dishes!!
                 </p>
               </div>
             </div>
@@ -72,14 +78,16 @@ const CoverImg = () => {
           <div>
             <LazyLoadImage className="h-5/6" src={img_6} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur"/>
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
-            <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
+            <div className="text-overlay absolute left-[-10%] top-[10%] lg:top-[40%] lg:left-[20%] p-5 text-white">
               <div className="">
-                <p className="text-2xl lg:text-6xl font-semibold">
+                <p className="text-2xl lg:text-6xl pl-10 lg:pl-0 font-semibold">
                   Welcome to Master Chef
                 </p>
-                <p className="pl-20 py-5 text-2xl">
+                <p className="pl-20 py-5 lg:text-2xl lg:pr-0 pr-5">
                   Choose healthy. Be strong. Live long.We are providing the best
-                  AMERICAN FOOD
+                  AMERICAN FOOD.
+                  <br />
+                  Here we are going to show you top 9 Chef in America and their top American dishes!!
                 </p>
               </div>
             </div>
@@ -89,14 +97,16 @@ const CoverImg = () => {
           <div>
             <LazyLoadImage className="h-5/6" src={img_7} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur"/>
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
-            <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
+            <div className="text-overlay absolute left-[-10%] top-[10%] lg:top-[40%] lg:left-[20%] p-5 text-white">
               <div className="">
-                <p className="text-2xl lg:text-6xl font-semibold">
+                <p className="text-2xl lg:text-6xl pl-10 lg:pl-0 font-semibold">
                   Welcome to Master Chef
                 </p>
-                <p className="pl-20 py-5 text-2xl">
+                <p className="pl-20 py-5 lg:text-2xl lg:pr-0 pr-5">
                   Choose healthy. Be strong. Live long.We are providing the best
-                  AMERICAN FOOD
+                  AMERICAN FOOD.
+                  <br />
+                  Here we are going to show you top 9 Chef in America and their top American dishes!!
                 </p>
               </div>
             </div>
@@ -106,14 +116,16 @@ const CoverImg = () => {
           <div>
             <LazyLoadImage className="h-5/6" src={img_8} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur"/>
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
-            <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
+            <div className="text-overlay absolute left-[-10%] top-[10%] lg:top-[40%] lg:left-[20%] p-5 text-white">
               <div className="">
-                <p className="text-2xl lg:text-6xl font-semibold">
+                <p className="text-2xl lg:text-6xl pl-10 lg:pl-0 font-semibold">
                   Welcome to Master Chef
                 </p>
-                <p className="pl-20 py-5 text-2xl">
+                <p className="pl-20 py-5 lg:text-2xl lg:pr-0 pr-5">
                   Choose healthy. Be strong. Live long.We are providing the best
-                  AMERICAN FOOD
+                  AMERICAN FOOD.
+                  <br />
+                  Here we are going to show you top 9 Chef in America and their top American dishes!!
                 </p>
               </div>
             </div>
@@ -123,14 +135,16 @@ const CoverImg = () => {
           <div>
             <LazyLoadImage className="h-5/6" src={img_1} alt="" placeholderSrc='https://via.placeholder.com/150' effect="blur"/>
             <div className="image-overlay absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
-            <div className="text-overlay absolute left-[10%] top-[20%] lg:left-[30%] p-5 text-white">
+            <div className="text-overlay absolute left-[-10%] top-[10%] lg:top-[40%] lg:left-[20%] p-5 text-white">
               <div className="">
-                <p className="text-2xl lg:text-6xl font-semibold">
+                <p className="text-2xl lg:text-6xl pl-10 lg:pl-0 font-semibold">
                   Welcome to Master Chef
                 </p>
-                <p className="pl-20 py-5 text-2xl">
+                <p className="pl-20 py-5 lg:text-2xl lg:pr-0 pr-5">
                   Choose healthy. Be strong. Live long.We are providing the best
-                  AMERICAN FOOD
+                  AMERICAN FOOD.
+                  <br />
+                  Here we are going to show you top 9 Chef in America and their top American dishes!!
                 </p>
               </div>
             </div>
