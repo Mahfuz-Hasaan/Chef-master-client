@@ -1,4 +1,6 @@
 import { FaUserCircle } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 <link
   href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Lato&family=Vina+Sans&display=swap"
   rel="stylesheet"
@@ -8,25 +10,24 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 const NavigationBar = () => {
-
-  const {user,logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
-  const handleLogout =  () =>{
+  const handleLogout = () => {
     logOut()
       .then(() => {
-        toast.success('Successfully signed out', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            });
+        toast.success("Successfully signed out", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       })
       .catch((error) => console.log(error));
-  }
+  };
   return (
     <div className="">
       <div className=" ">
@@ -77,17 +78,21 @@ const NavigationBar = () => {
               </li>
             </ul>
           </div>
-          {
-            user ? <div className="navbar-end pr-5 font-semibold"><button onClick={handleLogout}>Logout</button>
-            <p></p>
-            </div> :
+          {user ? (
+            <div className="navbar-end lg:pr-5 pl-20 font-semibold flex lg:flex-row flex-col lg:gap-4 gap-2">
+              <img className="w-12 rounded-3xl" src={user.photoURL}alt="" />
+              <button className="border-2 rounded-md p-2 bg-amber-50" onClick={handleLogout}>Logout</button>         
+            </div>
+          ) : (
             <div className="navbar-end pr-5">
-            <Link className="font-semibold" to="/login">Login</Link>
-           
-          </div>
-          }
+              <Link className="font-semibold" to="/login">
+                Login
+              </Link>
+            </div>
+          )}
         </div>
-      </div>  
+        <ToastContainer></ToastContainer>
+      </div>
     </div>
   );
 };

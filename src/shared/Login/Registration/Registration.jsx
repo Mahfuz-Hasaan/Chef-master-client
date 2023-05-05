@@ -3,12 +3,13 @@ import { AuthContext } from "../../../providers/AuthProviders";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [passwordStrength, setPasswordStrength] = useState("");
-  const { createUser } = useContext(AuthContext);
+  const { createUser,updateUserData } = useContext(AuthContext);
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -24,6 +25,14 @@ const Registration = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        updateProfile(result.user,{
+          displayName : name,
+          photoURL : photo
+        })
+        .then(()=>console.log('user is updated'))
+        .catch((error)=>setError(error.message));
+
+
         toast.success("Successfully signed in", {
           position: "top-right",
           autoClose: 5000,

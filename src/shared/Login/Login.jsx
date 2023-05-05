@@ -81,7 +81,7 @@ const Login = () => {
                 required
               />
             </div>
-
+            <p className="text-red-600">{error}</p>
             <div className="mb-4 w-fit  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               <button type="submit">Login</button>
             </div>
